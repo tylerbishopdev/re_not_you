@@ -7,8 +7,10 @@ replicate_api_token = os.getenv("REPLICATE_API_TOKEN")
 
 
 # Streamlit app
-st.title("YE-I")
-st.subheader("Geniusly Created As A Kanye-Themed AI Model Playground By $hibaKing")
+st.image("./public/kanyeicon.png")
+st.title("YE-I By $hibaKing")
+
+st.subheader("Pick a model and tell Ye what kind of image you want")
 with st.sidebar:
   if not replicate_api_token:
     replicate_api_token = st.text_input("Replicate API Token", type="password")
@@ -36,40 +38,40 @@ if st.button("Generate"):
         if option == "Image: Re_Adam/Machine":
           output = replicate.run(
             "tylerbishopdev/adammachine:7f2777e9f593b60851b8a23dada634d9324fb7d256819d20e16ae90e4be510ff",
-            input={
+input={
                 "width": 1024,
                 "height": 1024,
-                "prompt": "a photo of ADAM storming the United States capital wearing a red hat",
+                "prompt": "ADAM" + prompt,
                 "refine": "no_refiner",
                 "scheduler": "K_EULER",
-                "lora_scale": 0.6,
+                "lora_scale": 0.8,  # Increased to enhance resemblance to training images
                 "num_outputs": 1,
-                "guidance_scale": 7.5,
+                "guidance_scale": 3,  # Increased to provide stronger adherence to the prompt
                 "apply_watermark": True,
-                "high_noise_frac": 0.8,
-                "negative_prompt": "",
-                "prompt_strength": 0.8,
-                "num_inference_steps": 50
+                "high_noise_frac": 0.5,  # Reduced to decrease noise and improve image quality
+                "negative_prompt": "ugly hands, distorted face, crooked or missing teeth, extra fingers, distorted age of subject",
+                "prompt_strength": 0.5,  # Increased to make the prompt more influential
+                "num_inference_steps": 100  # Increased to allow more steps for better quality
             }
           )
           st.success(''.join(output))
         elif option == "Image: Re_Tyler/Machine":
           output = replicate.run(
             "tylerbishopdev/retylerv2:04de895d7e4756f867247b907a4aa66df16ba9cc00c95cca7602f85c6ff88702",
-            input={
+           input={
                 "width": 1024,
                 "height": 1024,
-                "prompt": "A comic-style image of TYLER riding a sloth",
+                "prompt": "Tyler" + prompt,
                 "refine": "no_refiner",
                 "scheduler": "K_EULER",
-                "lora_scale": 0.6,
+                "lora_scale": 0.8,  # Increased to enhance resemblance to training images
                 "num_outputs": 1,
-                "guidance_scale": 7.5,
+                "guidance_scale": 3,  # Increased to provide stronger adherence to the prompt
                 "apply_watermark": True,
-                "high_noise_frac": 0.8,
-                "negative_prompt": "",
-                "prompt_strength": 0.8,
-                "num_inference_steps": 50
+                "high_noise_frac": 0.5,  # Reduced to decrease noise and improve image quality
+                "negative_prompt": "ugly hands, distorted face, crooked or missing teeth, extra fingers, distorted age of subject",
+                "prompt_strength": 0.5,  # Increased to make the prompt more influential
+                "num_inference_steps": 100  # Increased to allow more steps for better quality
             }
           )
           st.success(''.join(output))
@@ -79,17 +81,17 @@ if st.button("Generate"):
             input={
                 "width": 1024,
                 "height": 1024,
-                "prompt": "An astronaut riding a rainbow unicorn",
+                "prompt": "Angie" + prompt,
                 "refine": "no_refiner",
                 "scheduler": "K_EULER",
-                "lora_scale": 0.6,
+                "lora_scale": 0.8,  # Increased to enhance resemblance to training images
                 "num_outputs": 1,
-                "guidance_scale": 7.5,
+                "guidance_scale": 3,  # Increased to provide stronger adherence to the prompt
                 "apply_watermark": True,
-                "high_noise_frac": 0.8,
-                "negative_prompt": "",
-                "prompt_strength": 0.8,
-                "num_inference_steps": 50
+                "high_noise_frac": 0.5,  # Reduced to decrease noise and improve image quality
+                "negative_prompt": "ugly hands, distorted face, crooked or missing teeth, extra fingers, distorted age of subject",
+                "prompt_strength": 0.5,  # Increased to make the prompt more influential
+                "num_inference_steps": 100  # Increased to allow more steps for better quality
             }
           )
           st.success(''.join(output))
@@ -99,17 +101,17 @@ if st.button("Generate"):
             input={
                 "width": 1024,
                 "height": 1024,
-                "prompt": "JENA in a X-men’s juggernaut costume from the neck down",
+                "prompt": "JENA" + prompt,
                 "refine": "no_refiner",
                 "scheduler": "K_EULER",
-                "lora_scale": 0.6,
+                "lora_scale": 0.8,  # Increased to enhance resemblance to training images
                 "num_outputs": 1,
-                "guidance_scale": 7.5,
+                "guidance_scale": 3,  # Increased to provide stronger adherence to the prompt
                 "apply_watermark": True,
-                "high_noise_frac": 0.8,
-                "negative_prompt": "",
-                "prompt_strength": 0.8,
-                "num_inference_steps": 50
+                "high_noise_frac": 0.5,  # Reduced to decrease noise and improve image quality
+                "negative_prompt": "ugly hands, distorted face, crooked or missing teeth, extra fingers, distorted age of subject",
+                "prompt_strength": 0.5,  # Increased to make the prompt more influential
+                "num_inference_steps": 100  # Increased to allow more steps for better quality
             }
           )
           st.success(''.join(output))
