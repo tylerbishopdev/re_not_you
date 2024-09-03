@@ -1,2 +1,3 @@
 streamlit==1.38.0
 replicate==0.32.1
+python-dotenv==0.21.0

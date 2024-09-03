@@ -1,19 +1,28 @@
-# replicate
-[Replicate](https://replicate.com) is a platform for hosting and running machine learning (ML) models with a cloud API, without having to manage your own infrastructure. Sign up for an account at Replicate and get an API token, which you'll need for this project.
+# Some basic commands to setup
 
-This repository showcases a simple Streamlit app for running the following open-source text, code, image, audio, and music generation models on Replicate:
-* Text: Meta Llama 3 70B Instruct
-* Text: Meta Llama 3.1 405B Instruct
-* Text: Google Gemma 7B Instruct
-* Text: Mixtral 8x7B Instruct
-* Image: Stable Diffusion 3
-* Image: Black Forest Labs Flux Schnell
-* Code: Meta Code Llama 70B Instruct
-* Audio: Suno AI Bark
-* Music: Meta MusicGen
+```shell
+python -m venv venv
+```
 
-![replicate-sdxl](./replicate-sdxl.png)
+```shell
+source ./venv/bin/Activate
+```
 
-For a detailed guide, see [this](https://alphasec.io/running-open-source-generative-ai-models-on-replicate/) post. To deploy on [Railway](https://railway.app/?referralCode=alphasec) using a one-click template, click the button below.
+```shell
+pip install -r requirements.txt
+```
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/uHh2gJ?referralCode=alphasec)
+## env setup
+
+Create a .env file in the root directory of the project and add the following
+
+```shell
+#.env
+REPLICATE_API_TOKEN=your_secret_key
+```
+
+## run app
+
+```shell
+streamlit run ../re_not_you/streamlit_app.py
+```
